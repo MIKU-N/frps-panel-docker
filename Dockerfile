@@ -5,7 +5,7 @@ ENV VERSION 2.0.0
 ENV TZ=Asia/Shanghai
 WORKDIR /
 
-RUN apk add --no-cache tzdata \
+RUN apk add --no-cache tzdata zip \
     && ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime \
     && echo ${TZ} > /etc/timezone
 
