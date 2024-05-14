@@ -15,10 +15,9 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then export PLATFORM=amd64 ; \
 	elif [ "$(uname -m)" = "armv7l" ]; then export PLATFORM=arm ; \
 	elif [ "$(uname -m)" = "armhf" ]; then export PLATFORM=arm ; fi \
 	&& wget --no-check-certificate https://github.com/yhl452493373/frps-panel/releases/download/${VERSION}/frps-panel-linux-${PLATFORM}-${VERSION}.zip \
-	&& mkdir /frps-panel \ 	
 	&& unzip frps-panel-linux-${PLATFORM}-${VERSION}.zip -d /frps-panel  \
  	&& rm -rf *.zip frps-panel-linux-${PLATFORM}-${VERSION}
 
 VOLUME /frps-panel
 
-CMD /frps-panel/frps-panel -c /frps-panel.toml
+CMD /frps-panel/frps-panel -c /frps-panel/frps-panel.toml
