@@ -24,4 +24,4 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then export PLATFORM=amd64 ; \
 
 VOLUME /frps-panel
 
-CMD ./frps-panel/frps-panel -c ./frps-panel.toml
+CMD /frps-panel/frps-panel -c /frps-panel.toml
